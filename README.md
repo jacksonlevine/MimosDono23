@@ -1,24 +1,30 @@
-# Stable Standalone Client for mimosdono.xyz
+# MimosDono23
+3D sandbox world simulator made with OpenGL and C++. Also includes a Python modding API.
 
 ## Description:
 
-* Using the common GLFW3, GLEW, and GLM libraries to make a simple, fast stand-alone PC client for mimosdono.xyz, a web-based voxel game written in JavaScript with Three, React, Socketio and Firebase.
+* Using the common GLFW3, GLEW, and GLM libraries to make a 3D game with a procedural world, and adding multiplayer and a Python modding API.
 
 ## Technologies used:
 
-* GLFW, GLEW, GLM
-* Folly hashmap for storing world voxel data.
-* vcpkg for managing C++ libraries
+* OpenGL, through the libraries GLFW, GLEW, GLM
+* EnTT for Entity Component System
+* Python C API and Python scripts
+* Boost libraries for UDP/TCP communication in multiplayer
 
 ## Installation:
 
 ### Vcpkg and dependencies
 
 1. Make sure you have vcpkg installed and set up, as explained here: https://vcpkg.io/en/getting-started.html
-2. For 64 bit Windows, run `vcpkg install glfw3:windows-x64`, or `./vcpkg.exe install glfw3:windows-x64` in the vcpkg directory if you do not have vcpkg.exe available on your PATH. If not on Windows x64, replace `:windows-x64` with the correct triplet for your system. Follow this pattern for installing the following packages:
-  * `vcpkg install glew:windows-x64`
-  * `vcpkg install glm:windows-x64`
-  * `vcpkg install folly:windows-x64`
+2. For 64 bit Windows, run the following commands in the vcpkg directory. If not on Windows x64, replace `:windows-x64` with the correct triplet for your system. Follow this pattern for installing the following packages:
+  * `./vcpkg.exe install glfw3:windows-x64`
+  * `./vcpkg.exe install glew:windows-x64`
+  * `./vcpkg.exe install glm:windows-x64`
+  * `./vcpkg.exe install nlohmann-json:windows-x64`
+  * `./vcpkg.exe install boost:windows-x64`
+  * './vcpkg.exe install pybind11:windows-x64`
+3. You must also have Python 3.10+ installed.
 
 ### After Vcpkg and dependencies are installed
 
